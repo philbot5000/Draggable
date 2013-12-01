@@ -1,0 +1,85 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "id": "main",
+        "designer|userClassName": "Main",
+        "designer|initialView": true,
+        "layout": "card"
+    },
+    "designerId": "cd5645b6-20e0-415a-b4e6-7a306e1fd174",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "itemId": "toolbar",
+                "title": "Krautrock"
+            },
+            "designerId": "37af0892-39ee-4d5d-9285-54068154a016",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": true,
+                        "hideAnimation": "fadeOut",
+                        "itemId": "backButton",
+                        "showAnimation": [
+                            "{type: 'slide', direction: 'right'}"
+                        ],
+                        "ui": "back",
+                        "text": "Krautrock"
+                    },
+                    "configAlternates": {
+                        "showAnimation": "object"
+                    },
+                    "designerId": "1fa02583-a84e-45a1-a9dd-3b4caccc607e",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onBackButtonTap",
+                                "implHandler": [
+                                    "Ext.ComponentQuery.query('#bandDetail')[0].hide();",
+                                    "Ext.ComponentQuery.query('#toolbar')[0].setTitle('Krautrock');",
+                                    "button.hide();"
+                                ],
+                                "name": "tap"
+                            },
+                            "designerId": "4419ff68-64e5-4e1d-b2d2-483ca68e6f7b"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "13053757-25e8-4ea7-8917-54fe9a211ecc",
+            "masterInstanceId": "8ec80c86-68bf-4b45-b14a-00fff92acc4f"
+        }
+    ]
+}

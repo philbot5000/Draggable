@@ -1,0 +1,61 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "BandList",
+        "designer|userAlias": "bandlist",
+        "store": "MyStore",
+        "onItemDisclosure": true
+    },
+    "designerId": "8ec80c86-68bf-4b45-b14a-00fff92acc4f",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<div>{Name}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "0a6fa996-bef9-4478-996b-5104b60fa98f"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    toolbar = main.getComponent('toolbar'),",
+                    "    back = toolbar.getComponent('backButton'),",
+                    "    detail = Ext.ComponentQuery.query('#bandDetail')[0] || Ext.create('MyApp.view.BandDetail',{hidden: true}),",
+                    "    bandImage = detail.getComponent('bandImage'),",
+                    "    description = detail.getComponent('description');",
+                    "",
+                    "bandImage.setSrc(record.data.Image);",
+                    "description.setHtml(record.data.Bio);",
+                    "toolbar.setTitle(record.data.Name);",
+                    "",
+                    "back.show();",
+                    "main.add(detail);",
+                    "detail.show();"
+                ],
+                "name": "itemtap"
+            },
+            "designerId": "bf545296-3a58-4f15-abb9-0ab4a5b9b055"
+        }
+    ]
+}

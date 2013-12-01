@@ -1,0 +1,77 @@
+{
+    "name": "Draggable",
+    "settings": {},
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1044,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch23",
+    "topInstanceFileMap": {
+        "cd5645b6-20e0-415a-b4e6-7a306e1fd174": {
+            "paths": [
+                "metadata/view/Main",
+                "app/view/override/Main.js",
+                "app/view/Main.js"
+            ],
+            "className": "Main"
+        },
+        "8ec80c86-68bf-4b45-b14a-00fff92acc4f": {
+            "paths": [
+                "metadata/view/BandList",
+                "app/view/override/BandList.js",
+                "app/view/BandList.js"
+            ],
+            "className": "BandList"
+        },
+        "282d04b7-b903-49d5-9035-e47d9f9ca0cf": {
+            "paths": [
+                "metadata/store/Bands",
+                "app/store/override/Bands.js",
+                "app/store/Bands.js"
+            ],
+            "className": "Bands"
+        },
+        "dcca4384-3f34-4891-8690-6d27e3b7333a": {
+            "paths": [
+                "metadata/model/Band",
+                "app/model/override/Band.js",
+                "app/model/Band.js"
+            ],
+            "className": "Band"
+        },
+        "b128a14e-d537-4340-9314-60e85b494e62": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "8540345d-36d6-4b7c-8a28-c20aa1be2c3c": {
+            "paths": [
+                "metadata/view/BandDetail",
+                "app/view/override/BandDetail.js",
+                "app/view/BandDetail.js"
+            ],
+            "className": "BandDetail"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "cd5645b6-20e0-415a-b4e6-7a306e1fd174",
+            "8ec80c86-68bf-4b45-b14a-00fff92acc4f",
+            "8540345d-36d6-4b7c-8a28-c20aa1be2c3c"
+        ],
+        "store": [
+            "282d04b7-b903-49d5-9035-e47d9f9ca0cf"
+        ],
+        "controller": [],
+        "model": [
+            "dcca4384-3f34-4891-8690-6d27e3b7333a"
+        ],
+        "resource": [
+            "b128a14e-d537-4340-9314-60e85b494e62"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

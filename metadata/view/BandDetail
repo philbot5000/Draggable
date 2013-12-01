@@ -1,0 +1,102 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "draggable": null,
+        "hideAnimation": [
+            "{",
+            "    type: 'slideOut',",
+            "    direction: 'right',",
+            "    reveal: true",
+            "}"
+        ],
+        "itemId": "bandDetail",
+        "showAnimation": [
+            "{type: 'slideIn', direction: 'left', cover: true}"
+        ],
+        "style": null,
+        "designer|userClassName": "BandDetail",
+        "scrollable": [
+            "{",
+            "    directionLock: true,",
+            "    direction: 'vertical'",
+            "}"
+        ]
+    },
+    "configAlternates": {
+        "scrollable": "object",
+        "showAnimation": "object",
+        "hideAnimation": "object"
+    },
+    "designerId": "8540345d-36d6-4b7c-8a28-c20aa1be2c3c",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 300,
+                "hidden": true,
+                "itemId": "bandImage",
+                "showAnimation": "fadeIn",
+                "width": "100%"
+            },
+            "designerId": "598ed672-9053-4f87-9505-c38940f60264",
+            "cn": [
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onBandImageLoad",
+                        "implHandler": [
+                            "image.show();"
+                        ],
+                        "name": "load"
+                    },
+                    "designerId": "f8686e23-e6b8-468b-9997-f2f1745295ef"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "description",
+                "padding": 10
+            },
+            "designerId": "b544a0e5-a8d5-4696-b707-e59a7a33da36"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onContainerInitialize",
+                "implHandler": [
+                    "Ext.ComponentQuery.query('#backButton')[0].show();",
+                    "MyApp.app.setDragInteraction(component);"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "8c3b7857-9135-4ba3-98b5-06f3c7e47623"
+        }
+    ]
+}

@@ -1,0 +1,94 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Band"
+        ],
+        "stores": [
+            "Bands"
+        ],
+        "views": [
+            "Main",
+            "BandList",
+            "BandDetail"
+        ],
+        "name": "MyApp"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setDragInteraction",
+                "designer|params": [
+                    "component"
+                ],
+                "implHandler": [
+                    "var dragObj = {",
+                    "    direction: 'horizontal',",
+                    "    constraint: {",
+                    "        min: {x: 0, y: 0},",
+                    "        // allows us to drag the entire width of the view",
+                    "        max: {x: window.innerWidth, y: 0}",
+                    "    },",
+                    "    listeners: {",
+                    "        dragend: function(draggable) {",
+                    "            // if the user has dragged more than half the width of the ",
+                    "            // screen, set the offset to width of the screen and hide the view.",
+                    "            if(draggable.offset.x > window.innerWidth / 2) {",
+                    "",
+                    "                Ext.ComponentQuery.query('#backButton')[0].hide();",
+                    "                Ext.ComponentQuery.query('#toolbar')[0].setTitle('Krautrock');",
+                    "",
+                    "",
+                    "                // setOffset takes X, Y, and an animation object",
+                    "                draggable.setOffset(window.innerWidth, 0, {",
+                    "                    type: 'slide',",
+                    "                    duration: 200",
+                    "                });",
+                    "",
+                    "                // using setTimeout here to allow the animation to finish,",
+                    "                // then hide the component and set setOffset back to 0",
+                    "                setTimeout(function() {",
+                    "                    component.setHidden(true);",
+                    "                    draggable.setOffset(0,0);",
+                    "                }, 300);",
+                    "            }",
+                    "",
+                    "            // User didn't drag far enough so snap back.",
+                    "            else {",
+                    "",
+                    "                draggable.setOffset(0, 0, {",
+                    "                    type: 'slide',",
+                    "                    duration: 200",
+                    "                });",
+                    "            }",
+                    "        },",
+                    "        // Extra credit: set the size of the shadow to decrease when the user",
+                    "        // drags closer to the right.",
+                    "        drag: function(drag) {",
+                    "",
+                    "            //console.log(shadowWidth);",
+                    "            //component.setStyle('box-shadow: -10px 0px 50px #666;');",
+                    "        }",
+                    "    }",
+                    "};",
+                    "",
+                    "//console.log(component.getWidth());",
+                    "component.setDraggable(dragObj);"
+                ]
+            },
+            "designerId": "4d55a2d0-ea23-40de-8eff-a165e284e0a8"
+        }
+    ]
+}
